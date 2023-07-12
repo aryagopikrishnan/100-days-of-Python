@@ -134,3 +134,23 @@ else:
 
 #------------------------------------------------------------------------------------
 
+#Code 6: 
+
+print("Welcome to Treasure Island.")
+print("Your mission is to find the treasure.")
+direction = input("Left or Right?")
+direction = direction.lower()
+if direction == "left":
+  action = input("swim or wait?")
+  action = action.lower()
+  if action == "wait":
+    door = input("Which door?")
+    door = door.lower()
+    if door == "yellow":
+      print("You Win!")
+    else:
+      print("Game Over.")
+  else:
+    print("Game Over.")
+else:
+  print("Game Over.")
