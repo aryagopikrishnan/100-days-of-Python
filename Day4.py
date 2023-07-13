@@ -9,6 +9,7 @@ else:
     print("Tails")
 
 #-------------------------------------------------------
+<<<<<<< HEAD:Day4.py
 # Code 2: Random selection from a list of names
 
 import random
@@ -95,4 +96,8 @@ elif computer_choice == player_choice:
   print("It's a draw")
 else:
   print("You lose.")
+
+=======
+# Code 2: 
+>>>>>>> 83d4b48c599d25a07c999da3d8f4fe021d583356:day4.py
 
