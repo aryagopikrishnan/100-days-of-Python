@@ -77,26 +77,28 @@ print(display)
 
 def game():
     
+    
+    num_lives = 6
+    while num_lives > 0 and "_" in display:
+        counter1 = display.count("_")
         
-        num_lives = 6
-        while num_lives > 0:
+        guess = input("Guess a letter: ").lower()
 
 
-            guess = input("Guess a letter: ").lower()
+        for position in range(len(chosen_word)):
+            letter = chosen_word[position]
+            if letter == guess:
+                display[position] = letter
+            
+        counter2 = display.count("_")
+        
+        if counter2==counter1:
+              num_lives = num_lives - 1
 
-
-            for position in range(len(chosen_word)):
-                letter = chosen_word[position]
-                if letter == guess:
-                    display[position] = letter
-                
-            if letter != guess:
-                num_lives -=1
-                      
-            print(display)
-            print(f"Lives left: {num_lives}")
-            if "_" not in display:
-                print("You Win.")
+        print(display)
+        print(f"Lives left: {num_lives}")
+        if "_" not in display:
+            print("You Win.")
                 
             
 game()
