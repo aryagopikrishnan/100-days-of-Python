@@ -47,3 +47,36 @@ print(travel_log)
 
 #-------------------------------------------------------------------------------------
 
+# Auction program
+
+
+#HINT: You can call clear() to clear the output in the console.
+
+auction_bids = {}
+bidding_finsihed = False
+
+def finding_highest_bid(bidding_record):
+  highest_bid = 0
+  winner = ""
+  for bidder in bidding_record:
+    bid_amount = bidding_record[bidder]
+    if bid_amount > highest_bid:
+      highest_bid = bid_amount
+      winner = bidder
+  print(f"The winner is {winner} with a bid of ${highest_bid}")
+    
+
+
+while not bidding_finsihed:
+  name = input("What is your name?")
+  bid = int(input("What is your bid? $"))
+  auction_bids[name] = bid
+  should_continue = input("Anymore bidders? yes or no: ")
+  if should_continue == "no":
+    bidding_finsihed = True
+  
+
+finding_highest_bid(auction_bids)
+
+
+
