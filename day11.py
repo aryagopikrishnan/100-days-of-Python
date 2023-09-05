@@ -27,3 +27,36 @@ def card_deal():
     random_card = random.choice(cards)
     return random_card
 
+
+def calculate_score(cards):
+    if sum(cards)==21 and len(cards)==2:
+        return 0
+    
+    if sum(cards) > 21 and 11 in cards:
+        cards.remove(11)
+        cards.append(1)
+    
+    return sum(cards)
+
+user_card=[]
+computer_card = []
+game_over = False
+
+for _ in range(0,2):
+    user_card.append(card_deal())
+    computer_card.append(card_deal())
+
+
+user_score = calculate_score(user_card)
+computer_score = calculate_score(computer_card)
+
+
+print(f"Your cards: {user_card}, current score: {user_score}")
+print(f"Computer's first card: {computer_card[0]}")
+if user_score==0 or computer_score==0 or user_score>21:
+    game_over=True
+
+
+
+
+
